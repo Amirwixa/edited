@@ -56,11 +56,10 @@ if check_password(username, password):
         print(upgrade_process.stderr)
         exit(1)
 
-    # آپگرید سیستم به آخرین نسخه
-    dist_upgrade_process = subprocess.run(["apt","update" "-y"], capture_output=True, text=True)
-    if dist_upgrade_process.returncode != 0:
-        print("An error occurred while performing system upgrade.")
-        print(dist_upgrade_process.stderr)
+    update_process = subprocess.run(["apt", "update"], capture_output=True, text=True)
+    if update_process.returncode != 0:
+        print("An error occurred while updating the package list.")
+        print(update_process.stderr)
         exit(1)
 
     # پاکسازی فایل‌های اضافی
