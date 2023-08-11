@@ -5,7 +5,7 @@ import subprocess
 import time
 def check_password(username, password):
     valid_passwords = {
-        "admin": "roseviolet"
+        "1": "1"
     }
 
     if username in valid_passwords and password == valid_passwords[username]:
@@ -15,8 +15,8 @@ def check_password(username, password):
 
 
 # دریافت یوزرنیم و پسورد از کاربر`
-username = input("enter username: ")
-password = input("enter password roseviolet: ")
+username = input("enter username1: ")
+password = input("enter password 1: ")
 
 if check_password(username, password):
     print("password currect")
